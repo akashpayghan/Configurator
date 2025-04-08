@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ParasharFPV - Firmware Flasher</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="header">
+    <img src="../assets/logo.png" alt="ParasharFPV Logo" class="logo">
+    <span class="app-title">ParasharFPV Configurator</span>
+    <span class="version">v1.0.0</span>
+    <div class="controls">
+      <select id="device-select">
+        <option value="">Select your device</option>
+      </select>
+      <button id="auto-connect">Auto-Connect</button>
+      <button id="update-firmware">Update Firmware</button>
+      <button id="connect">Connect</button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <ul>
+      <li><a href="#">Welcome</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Documentation & Support</a></li>
+      <li><a href="#">Options</a></li>
+      <li class="active"><a href="#">Firmware Flasher</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h2>Firmware Flasher</h2>
+    <div class="options">
+      <label><input type="checkbox" id="expert-mode"> Enable Expert Mode</label>
+      <label><input type="checkbox" id="show-rc"> Show release candidates</label>
+      <button id="detect">Detect</button>
+      <select id="board-select">
+        <option value="">Choose a board</option>
+      </select>
+      <select id="firmware-select">
+        <option value="">Choose a firmware version</option>
+      </select>
+    </div>
+
+    <div class="warning">
+      <strong>Warning!</strong>
+      <p>Please do not try to flash non-Betaflight hardware with this firmware flasher.</p>
+      <p><strong>Note:</strong> Do not disconnect the board or turn off your computer while flashing.</p>
+      <p><strong>Note:</strong> STM32-bootloader is stored in ROM, it cannot be bricked.</p>
+      <p><strong>Note:</strong> Auto-Connect is always disabled while you are inside firmware flasher.</p>
+      <p><strong>Note:</strong> If you have problems flashing, try disconnecting all cables from your FC first, rebooting, upgrading drivers.</p>
+      <p><strong>IMPORTANT:</strong> Ensure you flash a file appropriate for your target. Flashing a binary for a different target can cause bad things to happen.</p>
+    </div>
+
+    <div class="recovery">
+      <strong>Recovery / Lost communication</strong>
+      <p>If you have lost communication with your board follow these steps to restore communication:</p>
+      <ul>
+        <li>Power off</li>
+        <li>Enable NO reboot sequence, enable "Full chip erase"</li>
+        <li>Jump the BOOT pins or hold BOOT button</li>
+        <li>Install STM32 drivers and Zadig if required (see USB Flashing section of Betaflight manual)</li>
+        <li>Close configurator. Restart Configurator.</li>
+        <li>Release BOOT button if you use one.</li>
+        <li>Flash with correct firmware (using manual baud rate if specified in your FCs manual).</li>
+        <li>Remove BOOT jumper.</li>
+        <li>Power on (activity LED should flash)</li>
+        <li>Connect normally.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="exit-dfu">Exit DFU Mode</button>
+    <button id="flash-firmware">Flash Firmware</button>
+    <button id="load-online">Load Firmware (Online)</button>
+    <button id="load-local">Load Firmware (Local)</button>
+    <span class="status">Port utilization: 0x0M/0% | Packet error: 0 | ZC error: 0 | Cycle Time: 0 | CPU Load: 0%</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

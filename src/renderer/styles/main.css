@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #d3d3d3;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #444;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .app-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .version {
+    margin-left: auto;
+    font-size: 12px;
+  }
+  
+  .controls {
+    margin-left: auto;
+  }
+  
+  .controls select, .controls button {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .sidebar {
+    float: left;
+    width: 200px;
+    background-color: #2a2a2a;
+    padding: 10px 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+  }
+  
+  .sidebar li.active {
+    background-color: #444;
+  }
+  
+  .sidebar a {
+    color: #d3d3d3;
+    text-decoration: none;
+  }
+  
+  .main-content {
+    margin-left: 210px;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .options {
+    margin-bottom: 20px;
+  }
+  
+  .options label {
+    margin-right: 20px;
+  }
+  
+  .options select, .options button {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .warning, .recovery {
+    background-color: #3a2a2a;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+  }
+  
+  .warning strong, .recovery strong {
+    color: #ff4444;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 210px);
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-top: 1px solid #444;
+    margin-left: 210px;
+  }
+  
+  .footer button {
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+  
+  .status {
+    margin-left: 20px;
+    font-size: 12px;
+  }
